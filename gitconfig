@@ -39,7 +39,6 @@
   	dm   	 = diff master
 	s 	 = status
 	sb 	 = status -sb
-	p 	 = pull
   	remaster = rebase master
   	rei  	 = rebase -i master
 	tags 	 = tag -l
