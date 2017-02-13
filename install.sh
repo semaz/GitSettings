@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 rm ~/.gitconfig
-rm ~/.git-ignore-global
 
 SCRIPTS_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
