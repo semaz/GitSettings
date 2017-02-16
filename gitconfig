@@ -89,6 +89,9 @@
     # Find commits by commit message
     fm          = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
+    # commits not pushed to $1, master by default
+    unpushed    = cherry -v
+
     # Clone a repository including all submodules
 	cl	        = clone --recursive
 
@@ -102,9 +105,12 @@
 	sb 	        = status -sb
 
 	# Show verbose output about tags, branches or remotes
-    tags        = tag -l
+    tags        = tag -n1 -l
     branches    = branch -a
     remotes     = remote -v
+
+    # show a list of tags sorted by `sort` version compare (ie, more or less rpmvercmp)
+    tagsort = !sh -c 'git tag -l $1 | sort --version-sort'
 
     # List contributors with number of commits
     contributors = shortlog --summary --numbered
