@@ -11,7 +11,7 @@ Desktop.ini
 Thumbs.db
 
 ### macOS template
-*.DS_Store
+.DS_Store
 .AppleDouble
 .LSOverride
 

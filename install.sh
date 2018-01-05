@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-rm ~/.gitconfig
+if [ -f "~/.gitconfig" ]; then
+    rm ~/.gitconfig
+fi
 
-GIT_CONFIG_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+GITSETTINGS_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -s $GIT_CONFIG_PATH/gitconfig ~/.gitconfig
-ln -s $GIT_CONFIG_PATH/gitignore-global ~/.git-ignore-global
-
+ln -s $GITSETTINGS_PATH/gitconfig ~/.gitconfig
 
 bashinst(){
     if ! grep -q "$1" ~/$(get_rc_path); then
@@ -22,4 +22,5 @@ get_rc_path(){
     fi
 }
 
-bashinst "source $GIT_CONFIG_PATH/gitdata.sh" "GitHub names";
+bashinst "export GITSETTINGS_PATH=$GITSETTINGS_PATH" "Git Settings Path";
+bashinst "source $GITSETTINGS_PATH/data.sh" "Git Settings Data";

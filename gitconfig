@@ -1,6 +1,3 @@
-[include]
-    path = ~/.gitdata
-
 [core]
 
 	filemode = true
@@ -8,8 +5,8 @@
 	# default editor
 	editor = nano
 
-	# Use custom .gitignore
-	excludesfile = ~/.git-ignore-global
+	# Use custom gitignore
+	excludesfile = ignore
 
 	autocrlf = input
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
@@ -75,8 +72,7 @@
 
 [alias]
 
-  	lg 	        = log --graph --decorate --pretty=oneline --abbrev-commit
-	lgg 	    = !git log --oneline --graph --decorate --all
+    l           = "log --graph --abbrev-commit --pretty='format:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'"
 
 	# Commit all changes
 	c 	        = commit -a -m
@@ -108,19 +104,16 @@
     remotes     = remote -v
 
     # show a list of tags sorted by `sort` version compare (ie, more or less rpmvercmp)
-    tagsort = !sh -c 'git tag -l $1 | sort --version-sort'
-
-    # List contributors with number of commits
-    contributors = shortlog --summary --numbered
+    tagsort     = !sh -c 'git tag -l $1 | sort --version-sort'
 
 	# Switch to a branch, creating it if necessary
     go          = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
   	remaster    = rebase master
   	rei  	    = rebase -i master
-	tags 	    = tag -l
-	branches    = branch -a
-	remotes     = remote -v
+
+  	# List contributors with number of commits
+    contributors = shortlog --summary --numbered
 [user]
-	name = creel
+	name = DevCreel
 	email = devcreel@gmail.com
