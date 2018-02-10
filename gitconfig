@@ -114,6 +114,3 @@
 
   	# List contributors with number of commits
     contributors = shortlog --summary --numbered
-[user]
-	name = $GIT_NAME
-	email = $GIT_EMAIL
