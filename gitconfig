@@ -74,6 +74,8 @@
 
     l           = "log --graph --abbrev-commit --pretty='format:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'"
 
+    f           = fetch --all --prune
+
 	# Commit all changes
 	c 	        = commit -a -m
 
