@@ -111,8 +111,8 @@
 	# Switch to a branch, creating it if necessary
     go          = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
-  	remaster    = rebase master
-  	rei  	    = rebase -i master
+  	# remove local commit without loosing changes
+    rmc         = reset HEAD~1 --soft
 
   	# List contributors with number of commits
     contributors = shortlog --summary --numbered
