@@ -1,6 +1,6 @@
 [core]
 
-	filemode = true
+	filemode = false
 
 	# default editor
 	editor = nano
@@ -8,7 +8,7 @@
 	# Use custom gitignore
 	excludesfile = ignore
 
-	autocrlf = input
+	autocrlf = true
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 	# Make `git rebase` safer on macOS
@@ -73,8 +73,8 @@
 [alias]
 
     l           = "log --graph --abbrev-commit --pretty='format:%C(blue)%h%C(red)%d%C(yellow) %s %C(green)%an%Creset, %ar'"
-
     f           = fetch --all --prune
+    patch       = pull
 
 	# Commit all changes
 	c 	        = commit -a -m
