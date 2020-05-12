@@ -6,7 +6,10 @@ rm -f ~/.gitconfig
 ln -s $SCRIPTS_PATH/gitconfig ~/.gitconfig
 
 get_rc_path() {
-  if [ -f ~/.bash_profile ]
+  if [ -f ~/.bash_aliases ]
+  then
+     echo ".bash_aliases";
+  elif [ -f ~/.bash_profile ]
   then
      echo ".bash_profile";
   elif [ -f ~/.bash_rc ]
