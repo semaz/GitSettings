@@ -32,10 +32,14 @@ fi;
 
 tee -a ~/$(get_rc_path) >/dev/null <<EOF
 
-# Git Settings Path
+# Git Settings
 export GITSETTINGS_PATH=$SCRIPTS_PATH
 
-# Git Settings Data
+if [ -f ~/.gitconfig ]
+  then
+     ln -s $GITSETTINGS_PATH/gitconfig ~/.gitconfig;
+  fi
+
 source $SCRIPTS_PATH/data.sh
 EOF
 
