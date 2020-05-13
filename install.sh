@@ -35,7 +35,7 @@ tee -a ~/$(get_rc_path) >/dev/null <<EOF
 # Git Settings
 export GITSETTINGS_PATH=$SCRIPTS_PATH
 
-if [ -f ~/.gitconfig ]
+if [ ! -f ~/.gitconfig ]
   then
      ln -s $GITSETTINGS_PATH/gitconfig ~/.gitconfig;
   fi
