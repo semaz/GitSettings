@@ -110,3 +110,5 @@
 
 [safe]
 	directory = *
+[init]
+	defaultBranch = master
